@@ -1,2 +1,1 @@
-# personal_website
-Code for my website about me. 
+This is (mostly) HTML code to make a practice website. I have made this website to use an an online CV and possibly a blogging tool. 
