@@ -44,16 +44,15 @@ h1{
     font-size:1.2em;
 }
 
-a:link{
+.link_title{
     text-decoration: none;
     color: black;
 }
-a:hover{
+
+.link_title:hover{
     text-decoration:underline;
 }
-a:visited{
-    color:black;
-}
+
 
 #spacer{
     padding: 30px;
@@ -235,6 +234,16 @@ p{
 .normal_body{
     text-align: left;
     font-family: 'raleway_reg',Arial;
+}
+
+.in_text_link{
+    font-weight:normal;
+    text-decoration:none;
+    color:red;
+}
+
+.in_text_link:hover{
+    text-decoration:underline;
 }
 
 #right_image{
