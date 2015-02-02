@@ -171,7 +171,8 @@ p{
 }
 
 .hot_air_pics{
-    align:middle;
+    margin-left:auto;
+    margin-right:auto;
     height:400px;
 }
 
