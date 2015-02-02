@@ -168,7 +168,11 @@ p{
     border-radius:10px;
     text-align: left;
     background-color: #929398
+}
 
+.hot_air_pics{
+    margin:auto;
+    height:300px;
 }
 
 .hotair_title{
