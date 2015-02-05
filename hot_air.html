@@ -39,6 +39,38 @@
 --->
 
  <!-- --------------------------------------------------------------------------------------------------------------- --> 
+           
+    <div class="entries">
+        <p class="hotair_title">
+            Plume Tracking - 05/02/2015
+        </p>
+        <p class="hotair_body">
+          I've been working on how the chemistry inside a smoke plume changes as it travels and gets blown about. The first step in doing this was finding out a way I could determine where the smoke plume was and being able to follow the middle of it as it moves. We are focusing on a forest fire that occured in Ontario between the 15th and 18th of July 2011 (as this was part of the BORTAS project I am a part of). What we end up with is something like what we have below. This is an animation of the smoke plume from a fire on the 16th and moving East towards the Atlantic. The 3D colour scatter is concentration of CO and the black line is what we have defined at the "middle" of the plume. </p>
+          <div class="hot_air_div"><img class="hot_air_pics" src="plume_with_track_16th.gif"></div>
+            
+          <p class="hotair_body">The method we used is still rough around the edges but seems to do a pretty good job at locating the path of a plume. There are a number of problems we came across when trying to do this and we've made some assumptions to make it work. A few are listed below:</p>
+            <ul class="hotair_body">
+            <li type='circle'>
+                How do we know what the 'center' of the plume is? To do this we assume that the highest value of Carbon Monoxide (CO) is the center - it is emitted directly from the fire and has an atmospheric lifetime of around 30 days. This means we can follow it for the first few days after emission from the fire. This assumes that all the emitted CO degrades at the same rate - so the air parcel with the maximum concentration at the start will always have the maximum concentration, then we follow the air parcel. 
+            </li><br>
+              <li type='circle'>
+                If a fire burns for a number of days - when do we start following the smoke? This is a bit of a problem because you could get lots of changing conditions over the few days that the fire is burning. For our simulation we split the burning period up into different days and follow each one - so for a fire from the 15th to the 18th of July we end up with a plume track for the 15th, 16th, 17th and 18th. We could split this up futher for hours of the day but this would mean we end up with a large number of tracks that might no differ that much from hour to hour. 
+            </li><br>
+                <li type='circle'>
+                How do we know the maximum CO come from the same fire? Or even from a fire at all? When we run the model we switch off all other emissions, that means there is no source of CO from anthropogenic pollution or CO from methane oxidation. So when we run it we can be sure the only source of CO is biomass burning. And to make sure there is no jump from one fire to another - each time step we make the rule the new spot for maximum CO can't be more than 5 model grid squares (~200 km) away.
+            </li>
+            </ul>
+       <p class="hotair_body"> One problem still not resolved is the fact that while the fire is burning (even if we split it up into just one day) the area of maximum CO is within the fire itself. That means when we turn the fire "off" and we follow the smoke from it - there can be a jump from the middle of the fire to the middle of the plume. This isn't such a big problem as we can just ignore the first 24 hours of the track, but it would be nice to sort out. </p>
+        <p class="hotair_body">
+            One thing to note is the massive difference in scale between the axeses. The latitude/longitude is pretty much the whole of North America, where as the pressure goes to around 300 hPa (~10 km) - so in reality the plume would be a lot smaller and thinner when compared to the size of North America. 
+            <br><br>
+            Now we have the plume tracked, we can take the latitude, longitude and pressure values from the tracking program and put that back into the GEOS-Chem model we are using. We can then find out what the concentrations of various chemicals are inside the biomass burning plume.
+        </p>
+    </div>
+   <div id="spacer"></div> 
+
+ <!-- --------------------------------------------------------------------------------------------------------------- -->   
+          
     <div class="entries">
         <p class="hotair_title">
             Air Quality in China - 02/02/2015
