@@ -59,7 +59,7 @@ h1{
 }
 
 #cover{
-    background:url(first.jpg) center center no-repeat;
+    background:url(pics/first.jpg) center center no-repeat;
     background-size: cover;
     width: 100%;
     /*position: absolute;*/
@@ -118,20 +118,20 @@ h1{
 }
 
 #me_button{
-    background:url(first.jpg);
+    background:url(pics/first.jpg);
 }
 #hotair_button{
-    background:url(volcano.jpg) center;
+    background:url(pics/volcano.jpg) center;
     background-size:400px 200px;
 }
 #contact_button{
-    background:url(indo_fire.jpg);
+    background:url(pics/indo_fire.jpg);
     background-position: bottom;
     background-size: 800px 700px;
     
 }
 #links_button{
-    background:url(haze.jpg);
+    background:url(pics/haze.jpg);
     background-position: bottom;
     background-size: 700px 500px;
 }

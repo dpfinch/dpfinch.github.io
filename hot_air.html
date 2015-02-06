@@ -7,6 +7,21 @@
     <title>Ramblings</title>
   </head>
 
+<!--
+This is script for google analytics - for me to see how many people visit my site. 
+-->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59461246-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
       <body>
     <div id="cover">
         <p id="my_name">Douglas Finch</p>
@@ -46,7 +61,7 @@
         </p>
         <p class="hotair_body">
           I've been working on how the chemistry inside a smoke plume changes as it travels and gets blown about. The first step in doing this was finding out a way I could determine where the smoke plume was and being able to follow the middle of it as it moves. We are focusing on a forest fire that occured in Ontario between the 15th and 18th of July 2011 (as this was part of the BORTAS project I am a part of). What we end up with is something like what we have below. This is an animation of the smoke plume from a fire on the 16th and moving East towards the Atlantic. The 3D colour scatter is concentration of CO and the black line is what we have defined at the "middle" of the plume. </p>
-          <div class="hot_air_div"><img class="hot_air_pics" src="plume_with_track_16th.gif"></div>
+          <div class="hot_air_div"><img class="hot_air_pics" src="pics/plume_with_track_16th.gif"></div>
             
           <p class="hotair_body">The method we used is still rough around the edges but seems to do a pretty good job at locating the path of a plume. There are a number of problems we came across when trying to do this and we've made some assumptions to make it work. A few are listed below:</p>
             <ul class="hotair_body">
@@ -91,7 +106,7 @@
         </p>
         <p class="hotair_body">
           I've been modelling ozone in North America - with the objective to compare this model to observations taken during the BORTAS campaign. This campaign took place in July 2011 and looked at the outflow of pollution from boreal forest fires (more information can be found <a href="http://www.geos.ed.ac.uk/research/eochem/bortas/" class="hot_air_link">here</a>. It was found during BORTAS that ozone is created downwind from forest fires in this region (shown in this <a href="http://www.atmos-chem-phys.net/13/7321/2013/acp-13-7321-2013.html" class="hot_air_link">paper</a> ). Now we want to know whether we can model this production of ozone to match the observations. I've created this animation of surface ozone during the campaign period (July 2011) showing the daily cycle of ozone creation and destruction.</p>
-	<div class="hot_air_div"><img class="hot_air_pics" src="ozone_july.gif"></div>
+	<div class="hot_air_div"><img class="hot_air_pics" src="pics/ozone_july.gif"></div>
 	<p class="hotair_body">	You can see the daily cycle of ozone production - even the movement of the sun from east coast to west. There is also evidence of a large forest fire - from the 15th to the 18th of July you can see a large production of ozone start up at 90 &deg; W and 50 &deg; N. The spot where the fire is cycles between a high concentration during the day and a very low concentrations during the night - implying some interesting chemistry over the area. There is also a nice plume of ozone coming off the east coast and swirling into the Atlantic. The next step is to see if this modelled ozone matches the observations taken during the BORTAS measurement campaign. 
         </p>
     </div><div id="spacer"></div>
