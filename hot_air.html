@@ -1,11 +1,27 @@
-<!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <title>Ramblings</title>
+    <link rel="shortcut icon" href="pics/favicon.ico" />
   </head>
+
+<!--
+This is script for google analytics - for me to see how many people visit my site. 
+-->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59461246-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
       <body>
     <div id="cover">
@@ -46,12 +62,12 @@
         </p>
         <p class="hotair_body">
           I've been working on how the chemistry inside a smoke plume changes as it travels and gets blown about. The first step in doing this was finding out a way I could determine where the smoke plume was and being able to follow the middle of it as it moves. We are focusing on a forest fire that occured in Ontario between the 15th and 18th of July 2011 (as this was part of the BORTAS project I am a part of). What we end up with is something like what we have below. This is an animation of the smoke plume from a fire on the 16th and moving East towards the Atlantic. The 3D colour scatter is concentration of CO and the black line is what we have defined at the "middle" of the plume. </p>
-          <div class="hot_air_div"><img class="hot_air_pics" src="plume_with_track_16th.gif"></div>
+          <div class="hot_air_div"><img class="hot_air_pics" src="pics/plume_with_track_16th.gif"></div>
             
           <p class="hotair_body">The method we used is still rough around the edges but seems to do a pretty good job at locating the path of a plume. There are a number of problems we came across when trying to do this and we've made some assumptions to make it work. A few are listed below:</p>
             <ul class="hotair_body">
             <li type='circle'>
-                How do we know what the 'center' of the plume is? To do this we assume that the highest value of Carbon Monoxide (CO) is the center - it is emitted directly from the fire and has an atmospheric lifetime of around 30 days. This means we can follow it for the first few days after emission from the fire. This assumes that all the emitted CO degrades at the same rate - so the air parcel with the maximum concentration at the start will always have the maximum concentration, then we follow the air parcel. 
+                How do we know what the 'centre' of the plume is? To do this we assume that the highest value of Carbon Monoxide (CO) is the centre - it is emitted directly from the fire and has an atmospheric lifetime of around 30 days. This means we can follow it for the first few days after emission from the fire. This assumes that all the emitted CO degrades at the same rate - so the air parcel with the maximum concentration at the start will always have the maximum concentration, then we follow the air parcel. 
             </li><br>
               <li type='circle'>
                 If a fire burns for a number of days - when do we start following the smoke? This is a bit of a problem because you could get lots of changing conditions over the few days that the fire is burning. For our simulation we split the burning period up into different days and follow each one - so for a fire from the 15th to the 18th of July we end up with a plume track for the 15th, 16th, 17th and 18th. We could split this up futher for hours of the day but this would mean we end up with a large number of tracks that might no differ that much from hour to hour. 
@@ -62,7 +78,7 @@
             </ul>
        <p class="hotair_body"> One problem still not resolved is the fact that while the fire is burning (even if we split it up into just one day) the area of maximum CO is within the fire itself. That means when we turn the fire "off" and we follow the smoke from it - there can be a jump from the middle of the fire to the middle of the plume. This isn't such a big problem as we can just ignore the first 24 hours of the track, but it would be nice to sort out. </p>
         <p class="hotair_body">
-            One thing to note is the massive difference in scale between the axeses. The latitude/longitude is pretty much the whole of North America, where as the pressure goes to around 300 hPa (~10 km) - so in reality the plume would be a lot smaller and thinner when compared to the size of North America. 
+            One thing to note is the massive difference in scale between the axes. The latitude/longitude is pretty much the whole of North America, where as the pressure goes to around 300 hPa (~10 km) - so in reality the plume would be a lot smaller and thinner when compared to the size of North America. 
             <br><br>
             Now we have the plume tracked, we can take the latitude, longitude and pressure values from the tracking program and put that back into the GEOS-Chem model we are using. We can then find out what the concentrations of various chemicals are inside the biomass burning plume.
         </p>
@@ -76,7 +92,7 @@
             Air Quality in China - 02/02/2015
         </p>
         <p class="hotair_body">
-          Its no secret that air quality in major Chinese cities is pretty horrendous. But a recent set of pictures presented in the Guardian online really shows the extent of the awful conditions expereienced by the residents. One of the most shocking things for me - although not entirely surprising is the lines of toddlers being given intravenous drips due to respiratory problems. Levels of PM2.5 were reported to be at 50 micrograms per cubic metre in Beijing - the safe level recommended by the World Health Organisation is 25 micrograms per cubic metre.</p>
+          Its no secret that air quality in major Chinese cities is pretty horrendous. But a recent set of pictures presented in the Guardian online really shows the extent of the awful conditions experienced by the residents. One of the most shocking things for me - although not entirely surprising is the lines of toddlers being given intravenous drips due to respiratory problems. Levels of PM2.5 were reported to be at 50 micrograms per cubic metre in Beijing - the safe level recommended by the World Health Organisation is 25 micrograms per cubic metre.</p>
 	<div class="hot_air_div2"><img class="hot_air_pics2" src="http://i.guim.co.uk/static/w-1430/h--/q-95/sys-images/Guardian/Pix/pictures/2014/2/25/1393336628875/8d016cba-0939-4936-baa0-75fcb03011ff-2060x1236.jpeg">
 <img class="hot_air_pics2" src="http://i.guim.co.uk/static/w-1430/h--/q-95/sys-images/Guardian/Pix/pictures/2014/2/25/1393332751633/6b08cac9-09bf-4689-aaa6-050c7d3927ce-2060x1236.jpeg"></div>
 	<p class="hotair_body"> I suppose the silver lining is that this problem isn't being ignored. Legislation is slowing coming into effect which will hopefully change things for the better. The full set of pictures can be found <a href="http://www.theguardian.com/world/gallery/2014/feb/25/air-pollution-in-china-in-pictures" class="hot_air_link">here</a>.  </p>
@@ -91,7 +107,7 @@
         </p>
         <p class="hotair_body">
           I've been modelling ozone in North America - with the objective to compare this model to observations taken during the BORTAS campaign. This campaign took place in July 2011 and looked at the outflow of pollution from boreal forest fires (more information can be found <a href="http://www.geos.ed.ac.uk/research/eochem/bortas/" class="hot_air_link">here</a>. It was found during BORTAS that ozone is created downwind from forest fires in this region (shown in this <a href="http://www.atmos-chem-phys.net/13/7321/2013/acp-13-7321-2013.html" class="hot_air_link">paper</a> ). Now we want to know whether we can model this production of ozone to match the observations. I've created this animation of surface ozone during the campaign period (July 2011) showing the daily cycle of ozone creation and destruction.</p>
-	<div class="hot_air_div"><img class="hot_air_pics" src="ozone_july.gif"></div>
+	<div class="hot_air_div"><img class="hot_air_pics" src="pics/ozone_july.gif"></div>
 	<p class="hotair_body">	You can see the daily cycle of ozone production - even the movement of the sun from east coast to west. There is also evidence of a large forest fire - from the 15th to the 18th of July you can see a large production of ozone start up at 90 &deg; W and 50 &deg; N. The spot where the fire is cycles between a high concentration during the day and a very low concentrations during the night - implying some interesting chemistry over the area. There is also a nice plume of ozone coming off the east coast and swirling into the Atlantic. The next step is to see if this modelled ozone matches the observations taken during the BORTAS measurement campaign. 
         </p>
     </div><div id="spacer"></div>
@@ -101,7 +117,7 @@
             Welcome to my website! - 25/01/2015
         </p>
         <p class="hotair_body">
-          I've decided I'd create myself a website. I'm going to try and keep this page up to date with various short entries about anything from my work to thoughts about the environment to projects/problems/successes with coding.
+          I've decided to create myself a website. I'm going to try and keep this page up to date with various short entries about anything from my work to thoughts about the environment to projects/problems/successes with coding.
 	  <br><br> As a bit of a caveat - this is a work in progress and part of the motivation of this website is to teach myself how to properly make websites. I am also using github as a temporary host so the site might be a bit unstable. If there are any issues or if there are any posts that you want clarifying then let me know - you can get my contact details in the contact page.
         </p>
     </div><div id="spacer"></div>
