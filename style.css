@@ -183,6 +183,15 @@ p{
     text-align:center;
     vertical-align:middle;
 }
+
+.hot_air_div3{
+    height:250px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    vertical-align:middle;
+}
+
 .hot_air_pics{
     margin-left:auto;
     margin-right:auto;
@@ -194,6 +203,14 @@ p{
     margin-right:auto;
     height:200px;
 }
+
+.hot_air_pics3{
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+    height:250px;
+}
+
 .hotair_title{
     font-size: 1.1em;
     font-family:'code_regular',Arial,sans-serif;
